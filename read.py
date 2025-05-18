@@ -8,9 +8,16 @@ with open('reviews.txt', 'r') as f:
 			print(len(data))
 print('Read over, total is', len(data), 'data.')
 
-
 # 每筆資料平均長度為？
 sum_len = 0
 for d in data:
 	sum_len += len(d)
 print('average length of reviews is', sum_len/len(data))
+
+# 篩選機制
+new = []
+for d in data:
+	if len(d) < 100:
+		new.append(d)
+print('共有', len(new), '筆留言長度<100。')
+print(new[0])
